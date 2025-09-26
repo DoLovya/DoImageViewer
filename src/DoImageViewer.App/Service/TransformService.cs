@@ -4,8 +4,8 @@ namespace DoImageViewer.App.Service;
 
 public class TransformService
 {
-    private const double _minScale = 0.1;
-    private const double _maxScale = 10.0;
+    private const double _minScale = 0.01;
+    private const double _maxScale = 32.0;
     private readonly ITransform _transform;
 
     public TransformService(ITransform transform)
