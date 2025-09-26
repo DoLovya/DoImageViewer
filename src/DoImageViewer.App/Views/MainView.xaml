@@ -1,0 +1,41 @@
+<Window
+    x:Class="DoImageViewer.App.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="clr-namespace:DoImageViewer.App.Behaviors"
+    xmlns:controls="clr-namespace:DoImageViewer.App.Controls"
+    xmlns:controlzEx="urn:controlzex"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:DoImageViewer.App"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:viewmodels="clr-namespace:DoImageViewer.App.ViewModels"
+    Title="{Binding FileNameTitle, Mode=OneWay}"
+    Width="1300"
+    Height="800"
+    d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Background="{StaticResource WindowBackgroundBrush}"
+    Foreground="{StaticResource PrimaryTextBrush}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <i:Interaction.Behaviors>
+        <behaviors:ImageDragDropBehavior MatSource="{Binding MatSource, Mode=TwoWay}" />
+    </i:Interaction.Behaviors>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <controls:PathButton Command="{Binding RotateLeftCommand}" Data="{StaticResource RotateLeftGemetry}" />
+                <controls:PathButton Command="{Binding RotateRightCommand}" Data="{StaticResource RotateRightGemetry}" />
+            </StackPanel>
+        </Grid>
+        <controls:ZoomableImageControl Grid.Row="1" ImageSource="{Binding MatSource, Converter={StaticResource MatToBitmapConverter}}" />
+    </Grid>
+</Window>

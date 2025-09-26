@@ -1,0 +1,23 @@
+<prism:PrismApplication
+    x:Class="DoImageViewer.App.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:DoImageViewer.App.Controls"
+    xmlns:converts="clr-namespace:DoImageViewer.App.Converts"
+    xmlns:helpers="clr-namespace:DoImageViewer.App.Helpers"
+    xmlns:local="clr-namespace:DoImageViewer.App"
+    xmlns:prism="http://prismlibrary.com/">
+    <prism:PrismApplication.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="/Styles/ColorResources.xaml" />
+                <ResourceDictionary Source="/Styles/CheckerboardStyles.xaml" />
+                <ResourceDictionary Source="/Styles/IconResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--  转换器资源  -->
+            <converts:MatToBitmapConverter x:Key="MatToBitmapConverter" />
+        </ResourceDictionary>
+    </prism:PrismApplication.Resources>
+</prism:PrismApplication>

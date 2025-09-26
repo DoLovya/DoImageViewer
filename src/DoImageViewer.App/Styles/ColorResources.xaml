@@ -1,0 +1,47 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  主题颜色  -->
+    <Color x:Key="PrimaryColor">#202020</Color>
+    <Color x:Key="SecondaryColor">#1E1E1E</Color>
+    <Color x:Key="AccentColor">#E74C3C</Color>
+
+    <!--  背景颜色  -->
+    <Color x:Key="WindowBackgroundColor">#202020</Color>
+    <Color x:Key="TitleBarBackgroundColor">#202020</Color>
+    <Color x:Key="ContentBackgroundColor">#202020</Color>
+
+    <!--  文本颜色  -->
+    <Color x:Key="PrimaryTextColor">#F4F4F4</Color>
+    <Color x:Key="SecondaryTextColor">#AAAAAA</Color>
+    <Color x:Key="LightTextColor">#F4F4F4</Color>
+    <Color x:Key="ButtonTextColor">#F4F4F4</Color>
+
+    <!--  边框颜色  -->
+    <Color x:Key="BorderColor">#FFFFFF</Color>
+
+    <!--  PathButton颜色  -->
+    <Color x:Key="PathButtonForegroundColor">#F4F4F4</Color>
+    <Color x:Key="PathButtonHoverForegroundColor">#FF555555</Color>
+    <Color x:Key="PathButtonPressedForegroundColor">#FF777777</Color>
+    <Color x:Key="PathButtonHoverBackgroundColor">#20FFFFFF</Color>
+    <Color x:Key="PathButtonPressedBackgroundColor">#40FFFFFF</Color>
+
+    <!--  固态画刷  -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource WindowBackgroundColor}" />
+    <SolidColorBrush x:Key="TitleBarBackgroundBrush" Color="{StaticResource TitleBarBackgroundColor}" />
+    <SolidColorBrush x:Key="ContentBackgroundBrush" Color="{StaticResource ContentBackgroundColor}" />
+    <SolidColorBrush x:Key="PrimaryTextBrush" Color="{StaticResource PrimaryTextColor}" />
+    <SolidColorBrush x:Key="SecondaryTextBrush" Color="{StaticResource SecondaryTextColor}" />
+    <SolidColorBrush x:Key="LightTextBrush" Color="{StaticResource LightTextColor}" />
+    <SolidColorBrush x:Key="ButtonTextBrush" Color="{StaticResource ButtonTextColor}" />
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+
+    <!--  PathButton画刷  -->
+    <SolidColorBrush x:Key="PathButtonForegroundBrush" Color="{StaticResource PathButtonForegroundColor}" />
+    <SolidColorBrush x:Key="PathButtonHoverForegroundBrush" Color="{StaticResource PathButtonHoverForegroundColor}" />
+    <SolidColorBrush x:Key="PathButtonPressedForegroundBrush" Color="{StaticResource PathButtonPressedForegroundColor}" />
+    <SolidColorBrush x:Key="PathButtonHoverBackgroundBrush" Color="{StaticResource PathButtonHoverBackgroundColor}" />
+    <SolidColorBrush x:Key="PathButtonPressedBackgroundBrush" Color="{StaticResource PathButtonPressedBackgroundColor}" />
+</ResourceDictionary>
