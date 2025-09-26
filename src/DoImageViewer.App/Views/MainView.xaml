@@ -10,6 +10,7 @@
     xmlns:local="clr-namespace:DoImageViewer.App"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:DoImageViewer.App.Models"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:viewmodels="clr-namespace:DoImageViewer.App.ViewModels"
     Title="{Binding FileNameTitle, Mode=OneWay}"
@@ -32,8 +33,16 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <controls:PathButton Command="{Binding RotateLeftCommand}" Data="{StaticResource RotateLeftGemetry}" />
-                <controls:PathButton Command="{Binding RotateRightCommand}" Data="{StaticResource RotateRightGemetry}" />
+                <controls:PathButton Command="{Binding RunMatOperatorCommand}" Data="{StaticResource RotateLeftGemetry}">
+                    <controls:PathButton.CommandParameter>
+                        <models:RotateLeft90Operator />
+                    </controls:PathButton.CommandParameter>
+                </controls:PathButton>
+                <controls:PathButton Command="{Binding RunMatOperatorCommand}" Data="{StaticResource RotateRightGemetry}">
+                    <controls:PathButton.CommandParameter>
+                        <models:RotateRight90Operator />
+                    </controls:PathButton.CommandParameter>
+                </controls:PathButton>
             </StackPanel>
         </Grid>
         <controls:ZoomableImageControl Grid.Row="1" ImageSource="{Binding MatSource, Converter={StaticResource MatToBitmapConverter}}" />

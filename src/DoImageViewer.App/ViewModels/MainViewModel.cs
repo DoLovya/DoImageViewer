@@ -1,12 +1,9 @@
-using DoImageViewer.App.Service;
+using DoImageViewer.App.Models;
 using OpenCvSharp;
 using Prism.Commands;
 using Prism.Mvvm;
 using System.IO;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Xaml;
 namespace DoImageViewer.App.ViewModels;
 
 public class MainViewModel : BindableBase
@@ -25,8 +22,7 @@ public class MainViewModel : BindableBase
         set => SetProperty(ref _matSource, value);
     }
 
-    public ICommand RotateLeftCommand { get; init; }
-    public ICommand RotateRightCommand { get; init; }
+    public ICommand RunMatOperatorCommand { get; init; }
 
     public MainViewModel()
     {
@@ -51,18 +47,11 @@ public class MainViewModel : BindableBase
             MatSource = null;
         }
 
-        RotateLeftCommand = new DelegateCommand(RotateLeft);
-        RotateRightCommand = new DelegateCommand(RotateRight);
+        RunMatOperatorCommand = new DelegateCommand<IMatOperator>(RunMatOperator);
     }
 
-    private void RotateLeft()
+    private void RunMatOperator(IMatOperator @operator)
     {
-        ImageRotationService imageRotationService = new();
-        MatSource = ImageRotationService.RotateLeft90(MatSource);
-    }
-    private void RotateRight()
-    {
-        ImageRotationService imageRotationService = new();
-        MatSource = ImageRotationService.RotateRight90(MatSource);
+        MatSource = @operator?.Run(MatSource);
     }
 }
