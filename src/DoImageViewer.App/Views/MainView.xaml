@@ -48,6 +48,11 @@
                         <operators:FlipHorizontalOperator />
                     </controls:ImageButton.CommandParameter>
                 </controls:ImageButton>
+                <controls:ImageButton Command="{Binding RunMatOperatorCommand}" Source="{StaticResource FlipVerticalImage}">
+                    <controls:ImageButton.CommandParameter>
+                        <operators:FlipVerticalOperator />
+                    </controls:ImageButton.CommandParameter>
+                </controls:ImageButton>
             </StackPanel>
         </Grid>
         <controls:ZoomableImageControl Grid.Row="1" ImageSource="{Binding MatSource, Converter={StaticResource MatToBitmapConverter}}" />
