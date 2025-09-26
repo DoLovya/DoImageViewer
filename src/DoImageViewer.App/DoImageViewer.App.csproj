@@ -1,25 +1,40 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="7.0.1" />
-    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
-    <PackageReference Include="OpenCvSharp4" Version="4.11.0.20250507" />
-    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.11.0.20250507" />
-    <PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.11.0.20250507" />
-    <PackageReference Include="Prism.Unity" Version="8.1.97" />
-    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Resouces\Images\新文件夹\**" />
+		<EmbeddedResource Remove="Resouces\Images\新文件夹\**" />
+		<None Remove="Resouces\Images\新文件夹\**" />
+		<Page Remove="Resouces\Images\新文件夹\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="ControlzEx" Version="7.0.1" />
+		<PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+		<PackageReference Include="OpenCvSharp4" Version="4.11.0.20250507" />
+		<PackageReference Include="OpenCvSharp4.runtime.win" Version="4.11.0.20250507" />
+		<PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.11.0.20250507" />
+		<PackageReference Include="Prism.Unity" Version="8.1.97" />
+		<PackageReference Include="Prism.Wpf" Version="8.1.97" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Enums\" />
+		<Folder Include="Models\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resouces\Images\向右旋转.png" />
+		<Resource Include="Resouces\Images\向左旋转.png" />
+		<Resource Include="Resouces\Images\垂直翻转.png" />
+		<Resource Include="Resouces\Images\水平翻转.png" />
+	</ItemGroup>
 
 </Project>

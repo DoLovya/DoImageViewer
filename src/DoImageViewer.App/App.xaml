@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="/Styles/ColorResources.xaml" />
                 <ResourceDictionary Source="/Styles/CheckerboardStyles.xaml" />
                 <ResourceDictionary Source="/Styles/IconResources.xaml" />
+                <ResourceDictionary Source="/Resouces/ImagesDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <!--  转换器资源  -->

@@ -1,16 +1,24 @@
 <Button
-    x:Class="DoImageViewer.App.Controls.PathButton"
+    x:Class="DoImageViewer.App.Controls.ImageButton"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converts="clr-namespace:DoImageViewer.App.Converts"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:DoImageViewer.App.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DataContext="{d:DesignInstance Type=local:PathButton}"
+    xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
+    d:DataContext="{d:DesignInstance Type=local:ImageButton}"
     d:DesignHeight="40"
     d:DesignWidth="40"
+    Cursor=""
     mc:Ignorable="d">
-
+    <Button.Resources>
+        <ResourceDictionary>
+            <converts:ImageConverter x:Key="ImageConverter" BaseUri="pack://application:,,,/DoImageViewer.App;component/Resouces/" />
+        </ResourceDictionary>
+    </Button.Resources>
     <Button.Style>
+
         <Style TargetType="Button">
             <!--  基础属性  -->
             <Setter Property="Background" Value="Transparent" />
@@ -59,13 +67,5 @@
             </Setter>
         </Style>
     </Button.Style>
-
-    <!--  Path内容  -->
-    <Path
-        Cursor=""
-        Data="{Binding RelativeSource={RelativeSource AncestorType=local:PathButton}, Path=Data}"
-        Fill="{Binding RelativeSource={RelativeSource AncestorType=local:PathButton}, Path=Foreground}"
-        Stretch="{Binding RelativeSource={RelativeSource AncestorType=local:PathButton}, Path=Stretch}"
-        Stroke="{Binding RelativeSource={RelativeSource AncestorType=local:PathButton}, Path=Stroke}"
-        StrokeThickness="{Binding RelativeSource={RelativeSource AncestorType=local:PathButton}, Path=StrokeThickness}" />
+    <Image Source="{Binding Source, RelativeSource={RelativeSource AncestorType=local:ImageButton}, Converter={StaticResource ImageConverter}}" />
 </Button>

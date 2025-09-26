@@ -1,4 +1,4 @@
-using DoImageViewer.App.Models;
+using DoImageViewer.App.Service;
 using OpenCvSharp;
 using Prism.Commands;
 using Prism.Mvvm;

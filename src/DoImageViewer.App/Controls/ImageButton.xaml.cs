@@ -4,18 +4,15 @@ using System.Windows.Media;
 
 namespace DoImageViewer.App.Controls;
 
-public partial class PathButton : Button
+public partial class ImageButton : Button
 {
     #region 依赖属性
 
-    /// <summary>
-    /// Path几何数据
-    /// </summary>
-    public static readonly DependencyProperty DataProperty =
+    public static readonly DependencyProperty SourceProperty =
         DependencyProperty.Register(
-            nameof(Data),
-            typeof(Geometry),
-            typeof(PathButton),
+            nameof(Source),
+            typeof(string),
+            typeof(ImageButton),
             new PropertyMetadata(null));
 
     /// <summary>
@@ -25,7 +22,7 @@ public partial class PathButton : Button
         DependencyProperty.Register(
             nameof(Fill),
             typeof(Brush),
-            typeof(PathButton),
+            typeof(ImageButton),
             new PropertyMetadata(Brushes.Black));
 
     /// <summary>
@@ -35,7 +32,7 @@ public partial class PathButton : Button
         DependencyProperty.Register(
             nameof(Stroke),
             typeof(Brush),
-            typeof(PathButton),
+            typeof(ImageButton),
             new PropertyMetadata(null));
 
     /// <summary>
@@ -45,7 +42,7 @@ public partial class PathButton : Button
         DependencyProperty.Register(
             nameof(StrokeThickness),
             typeof(double),
-            typeof(PathButton),
+            typeof(ImageButton),
             new PropertyMetadata(0.1));
 
     /// <summary>
@@ -55,17 +52,17 @@ public partial class PathButton : Button
         DependencyProperty.Register(
             nameof(Stretch),
             typeof(Stretch),
-            typeof(PathButton),
+            typeof(ImageButton),
             new PropertyMetadata(Stretch.Uniform));
 
     #endregion
 
     #region 属性
 
-    public Geometry Data
+    public string Source
     {
-        get => (Geometry)GetValue(DataProperty);
-        set => SetValue(DataProperty, value);
+        get => (string)GetValue(SourceProperty);
+        set => SetValue(SourceProperty, value);
     }
 
     public Brush Fill
@@ -94,7 +91,7 @@ public partial class PathButton : Button
 
     #endregion
 
-    public PathButton()
+    public ImageButton()
     {
         InitializeComponent();
     }

@@ -1,8 +1,8 @@
 ﻿using OpenCvSharp;
 
-namespace DoImageViewer.App.Models;
+namespace DoImageViewer.App.Service.MatOperators;
 
-public class RotateRight90Operator : IMatOperator
+public class RotateLeft90Operator : IMatOperator
 {
     public Mat? Run(Mat? mat)
     {
@@ -12,7 +12,7 @@ public class RotateRight90Operator : IMatOperator
         Mat? rotatedMat = null;
         try {
             rotatedMat = new Mat();
-            Cv2.Rotate(mat, rotatedMat, RotateFlags.Rotate90Clockwise);
+            Cv2.Rotate(mat, rotatedMat, RotateFlags.Rotate90Counterclockwise);
             return rotatedMat;
         }
         catch (Exception ex) {

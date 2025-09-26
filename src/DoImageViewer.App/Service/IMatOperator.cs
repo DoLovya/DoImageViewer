@@ -1,6 +1,6 @@
 ﻿using OpenCvSharp;
 
-namespace DoImageViewer.App.Models;
+namespace DoImageViewer.App.Service;
 
 public interface IMatOperator
 {
