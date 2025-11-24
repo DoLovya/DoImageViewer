@@ -66,6 +66,7 @@ namespace DoImageViewer.App.Controls
             Point mousePosition = e.GetPosition(scrollViewer);
             double scaleFactor = e.Delta > 0 ? _zoomFactor : 1 / _zoomFactor;
             _currentScale = _transformService.ZoomAtPoint(_currentScale, mousePosition, scaleFactor);
+            OnTransformChanged();
             e.Handled = true;
         }
 
@@ -92,9 +93,42 @@ namespace DoImageViewer.App.Controls
                 Point currentPosition = e.GetPosition(scrollViewer);
                 _transformService.Translate(_lastMousePosition, currentPosition);
                 _lastMousePosition = currentPosition;
+                OnTransformChanged();
                 e.Handled = true;
             }
         }
+        #endregion
+
+        #region 公共属性和方法
+
+        /// <summary>
+        /// 获取当前缩放比例
+        /// </summary>
+        public double CurrentScale => _currentScale;
+
+        /// <summary>
+        /// 获取ScaleTransform引用
+        /// </summary>
+        public ScaleTransform ScaleTransform => scaleTransform;
+
+        /// <summary>
+        /// 获取TranslateTransform引用
+        /// </summary>
+        public TranslateTransform TranslateTransform => translateTransform;
+
+        /// <summary>
+        /// 变换改变事件
+        /// </summary>
+        public event EventHandler TransformChanged;
+
+        /// <summary>
+        /// 触发变换改变事件
+        /// </summary>
+        private void OnTransformChanged()
+        {
+            TransformChanged?.Invoke(this, EventArgs.Empty);
+        }
+
         #endregion
 
         #region 辅助方法

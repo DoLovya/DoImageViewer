@@ -55,6 +55,20 @@
                 </controls:ImageButton>
             </StackPanel>
         </Grid>
-        <controls:ZoomableImageControl Grid.Row="1" ImageSource="{Binding MatSource, Converter={StaticResource MatToBitmapConverter}}" />
+        <Grid Grid.Row="1">
+            <controls:ZoomableImageControl x:Name="MainImageControl" ImageSource="{Binding MatSource, Converter={StaticResource MatToBitmapConverter}}" />
+
+            <!--  鸟瞰图控件  -->
+            <controls:BirdsEyeView
+                x:Name="BirdsEyeControl"
+                Width="150"
+                Height="160"
+                Margin="10"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Background="{StaticResource PrimaryBrush}"
+                ImageSource="{Binding MatSource, Converter={StaticResource MatToBitmapConverter}}"
+                ViewportChanged="OnBirdsEyeViewportChanged" />
+        </Grid>
     </Grid>
 </Window>
