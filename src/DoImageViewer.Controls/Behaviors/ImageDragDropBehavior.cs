@@ -2,8 +2,6 @@ using Microsoft.Xaml.Behaviors;
 using OpenCvSharp;
 using System.IO;
 using System.Windows;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace DoImageViewer.Controls.Behaviors;
 

@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
@@ -28,8 +27,7 @@ namespace DoImageViewer.App.Helpers
                 throw new ArgumentNullException(nameof(window));
 
             // 确保窗口已初始化
-            if (PresentationSource.FromVisual(window) == null)
-            {
+            if (PresentationSource.FromVisual(window) == null) {
                 window.SourceInitialized += (s, e) => SetTitleBarColor(window, color);
                 return;
             }
@@ -46,7 +44,7 @@ namespace DoImageViewer.App.Helpers
 
             // 转换颜色为COLORREF格式 (0x00BBGGRR)
             int colorRef = (color.R) | (color.G << 8) | (color.B << 16);
-            
+
             // 设置标题栏颜色
             DwmSetWindowAttribute(hwnd, DWMWA_CAPTION_COLOR, ref colorRef, Marshal.SizeOf(typeof(int)));
         }

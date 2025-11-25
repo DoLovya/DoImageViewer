@@ -7,14 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="200"
     d:DesignWidth="200"
-    Background="Green"
+    Background="Transparent"
+    BorderBrush="Transparent"
     mc:Ignorable="d">
-    <Border
-        Background="#19000000"
-        BorderBrush="Red"
-        BorderThickness="1"
-        ClipToBounds="True"
-        CornerRadius="10">
+    <Border ClipToBounds="True" CornerRadius="10">
+        <Border.Background>
+            <SolidColorBrush Opacity="0.7" Color="{StaticResource PrimaryColor}" />
+        </Border.Background>
         <Grid>
             <!--  标题栏  -->
             <TextBlock
@@ -55,22 +54,25 @@
                                 <RectangleGeometry x:Name="FullAreaGeometry" />
                             </CombinedGeometry.Geometry1>
                             <CombinedGeometry.Geometry2>
-                                <RectangleGeometry x:Name="ViewportGeometry" />
+                                <RectangleGeometry
+                                    x:Name="ViewportGeometry"
+                                    RadiusX="8"
+                                    RadiusY="8" />
                             </CombinedGeometry.Geometry2>
                         </CombinedGeometry>
                     </Path.Data>
                 </Path>
 
-                <!--  视口指示器边框  -->
+                <!--  视口指示器边框（圆角矩形）  -->
                 <Rectangle
                     x:Name="ViewportIndicator"
                     Fill="Transparent"
+                    Stroke="{StaticResource PrimaryTextBrush}"
                     StrokeThickness="2"
                     Visibility="Collapsed">
                     <Rectangle.Effect>
                         <DropShadowEffect
-                            BlurRadius="3"
-                            Opacity="0.3"
+                            Opacity="0.35"
                             ShadowDepth="1"
                             Color="Black" />
                     </Rectangle.Effect>

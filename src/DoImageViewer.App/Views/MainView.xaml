@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:behaviors="http://DoImageViewer/Controls/Behaviors"
     xmlns:controls="http://DoImageViewer/Controls"
+    xmlns:controlsConverts="clr-namespace:DoImageViewer.Controls.Converts;assembly=DoImageViewer.Controls"
     xmlns:controlzEx="urn:controlzex"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
@@ -66,9 +67,54 @@
                 Margin="10"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
-                Background="{StaticResource PrimaryBrush}"
                 ImageSource="{Binding MatSource, Converter={StaticResource MatToBitmapConverter}}"
                 ViewportChanged="OnBirdsEyeViewportChanged" />
         </Grid>
+        <ListBox
+            Grid.Row="2"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            BorderThickness="0"
+            ItemsSource="{Binding ImageItems}"
+            SelectedItem="{Binding SelectedImageItem}">
+            <ListBox.Resources>
+                <controlsConverts:FilePathToUriConverter x:Key="FilePathToUriConverter" />
+            </ListBox.Resources>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Padding" Value="0" />
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <!--  设置为水平布局  -->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+            <!--  自定义列表项模板  -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <Image
+                            Width="60"
+                            Height="40"
+                            Source="{Binding ImagePath, Converter={StaticResource FilePathToUriConverter}}"
+                            Stretch="Uniform" />
+                        <TextBlock
+                            Width="70"
+                            Margin="0,2,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="{StaticResource PrimaryTextBrush}"
+                            Text="{Binding ImageName, Converter={StaticResource MiddleEllipsisConverter}, ConverterParameter=12}"
+                            TextAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

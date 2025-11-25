@@ -1,8 +1,8 @@
-using System.Windows;
-using System.Windows.Media;
 using DoImageViewer.App.Helpers;
 using DoImageViewer.App.Service;
 using DoImageViewer.Controls;
+using System.Windows;
+using System.Windows.Media;
 
 namespace DoImageViewer.App.Views;
 
@@ -42,7 +42,8 @@ public partial class MainView : Window
 
         _isUpdatingViewport = true;
 
-        try {
+        try
+        {
             // 计算新的变换参数
             var transform = ViewportCalculator.CalculateTransform(
                 MainImageControl.ImageSource.Width,
@@ -56,7 +57,8 @@ public partial class MainView : Window
             MainImageControl.TranslateTransform.X = transform.TranslateX;
             MainImageControl.TranslateTransform.Y = transform.TranslateY;
         }
-        finally {
+        finally
+        {
             _isUpdatingViewport = false;
         }
     }
@@ -71,7 +73,8 @@ public partial class MainView : Window
 
         _isUpdatingViewport = true;
 
-        try {
+        try
+        {
             // 计算当前视口参数
             var viewport = ViewportCalculator.CalculateViewport(
                 MainImageControl.ImageSource.Width,
@@ -88,7 +91,8 @@ public partial class MainView : Window
             BirdsEyeControl.ViewportWidth = viewport.Width;
             BirdsEyeControl.ViewportHeight = viewport.Height;
         }
-        finally {
+        finally
+        {
             _isUpdatingViewport = false;
         }
     }

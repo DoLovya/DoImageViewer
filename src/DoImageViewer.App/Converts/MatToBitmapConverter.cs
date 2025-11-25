@@ -1,7 +1,7 @@
-using System.Globalization;
-using System.Windows.Data;
 using OpenCvSharp;
 using OpenCvSharp.WpfExtensions;
+using System.Globalization;
+using System.Windows.Data;
 
 namespace DoImageViewer.App.Converts;
 

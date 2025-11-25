@@ -18,6 +18,7 @@
 
             <!--  转换器资源  -->
             <converts:MatToBitmapConverter x:Key="MatToBitmapConverter" />
+            <converts:MiddleEllipsisConverter x:Key="MiddleEllipsisConverter" />
         </ResourceDictionary>
     </prism:PrismApplication.Resources>
 </prism:PrismApplication>
