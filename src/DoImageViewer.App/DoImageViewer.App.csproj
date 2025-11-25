@@ -23,6 +23,7 @@
 		<PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.11.0.20250507" />
 		<PackageReference Include="Prism.Unity" Version="8.1.97" />
 		<PackageReference Include="Prism.Wpf" Version="8.1.97" />
+		<PackageReference Include="SharpVectors.Wpf" Version="1.8.5" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -35,6 +36,26 @@
 		<Resource Include="Resouces\Images\向左旋转.png" />
 		<Resource Include="Resouces\Images\垂直翻转.png" />
 		<Resource Include="Resouces\Images\水平翻转.png" />
+		<None Include="Resouces\Images\向右旋转.svg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>Icons\向右旋转.svg</TargetPath>
+		</None>
+		<None Include="Resouces\Images\向左旋转.svg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>Icons\向左旋转.svg</TargetPath>
+		</None>
+		<None Include="Resouces\Images\垂直翻转.svg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>Icons\垂直翻转.svg</TargetPath>
+		</None>
+		<None Include="Resouces\Images\水平翻转.svg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>Icons\水平翻转.svg</TargetPath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\DoImageViewer.Controls\DoImageViewer.Controls.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -13,16 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DoImageViewer.App.Controls
+namespace DoImageViewer.Controls;
+
+/// <summary>
+/// CarouselControl.xaml 的交互逻辑
+/// </summary>
+public partial class CarouselControl : UserControl
 {
-    /// <summary>
-    /// CarouselControl.xaml 的交互逻辑
-    /// </summary>
-    public partial class CarouselControl : UserControl
+    public CarouselControl()
     {
-        public CarouselControl()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

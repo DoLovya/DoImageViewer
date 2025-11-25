@@ -2,7 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace DoImageViewer.App.Controls;
+namespace DoImageViewer.Controls;
 
 public partial class ImageButton : Button
 {

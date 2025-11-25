@@ -1,8 +1,8 @@
 using System.Windows;
 using System.Windows.Media;
 using DoImageViewer.App.Helpers;
-using DoImageViewer.App.Controls;
 using DoImageViewer.App.Service;
+using DoImageViewer.Controls;
 
 namespace DoImageViewer.App.Views;
 
@@ -16,7 +16,7 @@ public partial class MainView : Window
 
         SourceInitialized += (s, e) =>
         {
-            TitleBarHelper.SetTitleBarBackgroundColor(this, 
+            TitleBarHelper.SetTitleBarBackgroundColor(this,
                 Color.FromRgb(0x20, 0x20, 0x20));
         };
 
@@ -42,23 +42,21 @@ public partial class MainView : Window
 
         _isUpdatingViewport = true;
 
-        try
-        {
+        try {
             // 计算新的变换参数
-             var transform = ViewportCalculator.CalculateTransform(
-                 MainImageControl.ImageSource.Width,
-                 MainImageControl.ImageSource.Height,
-                 MainImageControl.ActualWidth,
-                 MainImageControl.ActualHeight,
-                 MainImageControl.ScaleTransform.ScaleX,
-                 e.X, e.Y);
+            var transform = ViewportCalculator.CalculateTransform(
+                MainImageControl.ImageSource.Width,
+                MainImageControl.ImageSource.Height,
+                MainImageControl.ActualWidth,
+                MainImageControl.ActualHeight,
+                MainImageControl.ScaleTransform.ScaleX,
+                e.X, e.Y);
 
-             // 应用变换
-             MainImageControl.TranslateTransform.X = transform.TranslateX;
-             MainImageControl.TranslateTransform.Y = transform.TranslateY;
+            // 应用变换
+            MainImageControl.TranslateTransform.X = transform.TranslateX;
+            MainImageControl.TranslateTransform.Y = transform.TranslateY;
         }
-        finally
-        {
+        finally {
             _isUpdatingViewport = false;
         }
     }
@@ -73,17 +71,16 @@ public partial class MainView : Window
 
         _isUpdatingViewport = true;
 
-        try
-        {
+        try {
             // 计算当前视口参数
-             var viewport = ViewportCalculator.CalculateViewport(
-                 MainImageControl.ImageSource.Width,
-                 MainImageControl.ImageSource.Height,
-                 MainImageControl.ActualWidth,
-                 MainImageControl.ActualHeight,
-                 MainImageControl.ScaleTransform.ScaleX,
-                 MainImageControl.TranslateTransform.X,
-                 MainImageControl.TranslateTransform.Y);
+            var viewport = ViewportCalculator.CalculateViewport(
+                MainImageControl.ImageSource.Width,
+                MainImageControl.ImageSource.Height,
+                MainImageControl.ActualWidth,
+                MainImageControl.ActualHeight,
+                MainImageControl.ScaleTransform.ScaleX,
+                MainImageControl.TranslateTransform.X,
+                MainImageControl.TranslateTransform.Y);
 
             // 更新鸟瞰图视口
             BirdsEyeControl.ViewportX = viewport.X;
@@ -91,8 +88,7 @@ public partial class MainView : Window
             BirdsEyeControl.ViewportWidth = viewport.Width;
             BirdsEyeControl.ViewportHeight = viewport.Height;
         }
-        finally
-        {
+        finally {
             _isUpdatingViewport = false;
         }
     }

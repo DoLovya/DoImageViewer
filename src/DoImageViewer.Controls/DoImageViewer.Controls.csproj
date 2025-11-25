@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+		<PackageReference Include="OpenCvSharp4" Version="4.11.0.20250507" />
+		<PackageReference Include="SharpVectors.Wpf" Version="1.8.5" />
+	</ItemGroup>
+
+</Project>

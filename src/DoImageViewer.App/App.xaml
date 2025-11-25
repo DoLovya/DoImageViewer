@@ -2,7 +2,6 @@
     x:Class="DoImageViewer.App.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:DoImageViewer.App.Controls"
     xmlns:converts="clr-namespace:DoImageViewer.App.Converts"
     xmlns:helpers="clr-namespace:DoImageViewer.App.Helpers"
     xmlns:local="clr-namespace:DoImageViewer.App"

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoImageViewer.App", "src\DoImageViewer.App\DoImageViewer.App.csproj", "{23CE4E3E-2D27-A0E0-BBB0-B0CC8BCD4CE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoImageViewer.Controls", "src\DoImageViewer.Controls\DoImageViewer.Controls.csproj", "{7D2AAD34-917B-731B-0ABE-7491487F7FD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{23CE4E3E-2D27-A0E0-BBB0-B0CC8BCD4CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23CE4E3E-2D27-A0E0-BBB0-B0CC8BCD4CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23CE4E3E-2D27-A0E0-BBB0-B0CC8BCD4CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D2AAD34-917B-731B-0ABE-7491487F7FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D2AAD34-917B-731B-0ABE-7491487F7FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D2AAD34-917B-731B-0ABE-7491487F7FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D2AAD34-917B-731B-0ABE-7491487F7FD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

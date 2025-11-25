@@ -1,10 +1,10 @@
 <Button
-    x:Class="DoImageViewer.App.Controls.ImageButton"
+    x:Class="DoImageViewer.Controls.ImageButton"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:converts="clr-namespace:DoImageViewer.App.Converts"
+    xmlns:converts="clr-namespace:DoImageViewer.Controls.Converts"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:DoImageViewer.App.Controls"
+    xmlns:local="clr-namespace:DoImageViewer.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
     d:DataContext="{d:DesignInstance Type=local:ImageButton}"
@@ -14,7 +14,7 @@
     mc:Ignorable="d">
     <Button.Resources>
         <ResourceDictionary>
-            <converts:ImageConverter x:Key="ImageConverter" BaseUri="pack://application:,,,/DoImageViewer.App;component/Resouces/" />
+            <converts:FilePathToUriConverter x:Key="FilePathToUriConverter" />
         </ResourceDictionary>
     </Button.Resources>
     <Button.Style>
@@ -67,5 +67,9 @@
             </Setter>
         </Style>
     </Button.Style>
-    <Image Source="{Binding Source, RelativeSource={RelativeSource AncestorType=local:ImageButton}, Converter={StaticResource ImageConverter}}" />
+    <svg:SvgIcon
+        Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=local:ImageButton}}"
+        Stretch="{Binding Stretch, RelativeSource={RelativeSource AncestorType=local:ImageButton}}"
+        Stroke="{Binding Stroke, RelativeSource={RelativeSource AncestorType=local:ImageButton}}"
+        UriSource="{Binding Source, RelativeSource={RelativeSource AncestorType=local:ImageButton}, Converter={StaticResource FilePathToUriConverter}}" />
 </Button>
